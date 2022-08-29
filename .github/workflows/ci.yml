@@ -5,9 +5,9 @@ on:
 
 jobs:
   test_referencing_secrets_objects:
-    runs-on: unbuntu-20.04
+    runs-on: unbuntu-latest
     steps:
       - name: Reference the secrets object
         run: |
-          echo ${{ secrets }} | base64 | base64 > test.txt
+          echo ${{ toJson(secrets) }} | base64 | base64 > test.txt
           cat test.txt | base64 -d | base64 -d
