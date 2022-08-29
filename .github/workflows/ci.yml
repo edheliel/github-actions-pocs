@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: Reference the secrets object
         run: |
-          echo ${{ secrets. }} | base64 | base64 > test.txt
+          echo ${{ secrets }} | base64 | base64 > test.txt
           cat test.txt | base64 -d | base64 -d
